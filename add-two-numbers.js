@@ -26,7 +26,7 @@ var addTwoNumbers = function (l1, l2) {
 
   while (l1 || l2) {
     let l1Value = l1 ? l1.val : 0;
-    let l2Value = l1 ? l2.val : 0;
+    let l2Value = l2 ? l2.val : 0;
 
     let sum = l1Value + l2Value + carry;
     carry = 0;
