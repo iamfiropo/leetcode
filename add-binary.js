@@ -11,8 +11,8 @@ function addBinary(a, b) {
   let result = [];
 
   while (aArray >= 0 || bArray >= 0) {
-    let firstArray = a[aArray] ? Number(a[aArray]) : 0;
-    let secondArray = b[bArray] ? Number(b[bArray]) : 0;
+    let firstArray = a[aArray] ? Number(a[aArray--]) : 0;
+    let secondArray = b[bArray] ? Number(b[bArray--]) : 0;
     let sum = firstArray + secondArray + carry;
     carry = 0;
 
@@ -21,15 +21,8 @@ function addBinary(a, b) {
       carry = 1;
     }
 
-    aArray--;
-    bArray--;
-
-    result.unshift(sum);
+    result = sum + result;
   }
 
-  if (carry) {
-    result.unshift(carry);
-  }
-
-  return result.join("");
+  return carry ? carry + result : result;
 }
