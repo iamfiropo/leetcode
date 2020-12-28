@@ -24,3 +24,8 @@ const removeDuplicates = function (nums) {
 
   return i + 1;
 };
+
+// Time complexity of both solutions: O(n)
+// Space complexity of both solutions: O(1)
+
+// Both solutions are two pointers approach
