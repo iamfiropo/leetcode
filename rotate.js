@@ -1,16 +1,16 @@
-Quest: //leetcode.com/problems/rotate-array
-
 /**
  * @param {number[]} nums
  * @param {number} k
  * @return {void} Do not return anything, modify nums in-place instead.
- 
+ * 
+ Question: https://leetcode.com/problems/rotate-array
+
  Approach: Brute Force
  Time complexity: O(n * k). All the numbers are shifted by one step in k times
  Space complexity: O(1). No extra space is used
  */
 
-https: const rotate = function (nums, k) {
+const rotate = function (nums, k) {
   // Rotation remainder technique speed up the rotation if the value of k is greater than the length of array nums, e.g nums = [1,2,3], k = 4, it will rotate once which is the remainder
   k %= nums.length;
   let temp, previous;
