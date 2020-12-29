@@ -1,3 +1,5 @@
+Quest: //leetcode.com/problems/rotate-array
+
 /**
  * @param {number[]} nums
  * @param {number} k
@@ -8,7 +10,7 @@
  Space complexity: O(1). No extra space is used
  */
 
-const rotate = function (nums, k) {
+https: const rotate = function (nums, k) {
   // Rotation remainder technique speed up the rotation if the value of k is greater than the length of array nums, e.g nums = [1,2,3], k = 4, it will rotate once which is the remainder
   k %= nums.length;
   let temp, previous;
