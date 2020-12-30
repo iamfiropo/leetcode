@@ -47,13 +47,12 @@ var containsDuplicate = function (nums) {
  * Approach: Hash Table. Utilize a dynamic data structure that supports fast search and insert operations
  * Note to self: when n is not sufficiently large, an O(n) algorithm can be slower than an O(nlogn) algorithm because of hashtable overhead(collision) in maintaining its property
  * Time Complexity: O(n)
- * Space complexity: O(n).
+ * Space complexity: O(n).The space used by a hash table is linear with the number of elements in it
  */
 var containsDuplicate = function (nums) {
   const contains = {};
 
   for (let value of nums) {
-    console.log({ value });
     if (value in contains) {
       return true;
     } else {
@@ -70,7 +69,7 @@ var containsDuplicate = function (nums) {
  *
  * Approach: Hash Table. Utilize a dynamic data structure that supports fast search and insert operations
  * Time Complexity: O(n)
- * Space complexity: O(n).
+ * Space complexity: O(n).The space used by a hash table is linear with the number of elements in it
  */
 var containsDuplicate = function (nums) {
   const contains = {};
@@ -106,12 +105,3 @@ var containsDuplicate = function (nums) {
 
   return false;
 };
-
-/**
- * @param {number[]} nums
- * @return {boolean}
- *
- * Approach: Hash Table. Utilize a dynamic data structure that supports fast search and insert operations
- * Time Complexity: O(n)
- * Space complexity: O(n).
- */
