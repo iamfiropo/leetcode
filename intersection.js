@@ -42,11 +42,7 @@ var intersection = function (nums1, nums2) {
     biggestArray = nums1;
   }
 
-  let set = new Set();
-
-  for (let num of biggestArray) {
-    set.add(num);
-  }
+  let set = new Set(biggestArray); // O(n)
 
   for (let num of smallestArray) {
     if (set.has(num)) {
