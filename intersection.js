@@ -2,6 +2,9 @@
  * @param {number[]} nums1
  * @param {number[]} nums2
  * @return {number[]}
+ *
+ * Question: https://leetcode.com/problems/intersection-of-two-arrays
+ *
  * Approach: Brute Force Method
  * Time complexity: O(n^2)
  * Space complexity: O(n)
