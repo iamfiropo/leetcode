@@ -60,7 +60,7 @@ var moveZeroes = function (nums) {
  * @param {number[]} nums
  * @return {void} Do not return anything, modify nums in-place instead.
  
- Approach: Optimal
+ Approach: Optimal <Two Pointers>
  Time complexity: O(n)
  Space complexity: O(1)
  */
@@ -71,7 +71,6 @@ var moveZeroes = function (nums) {
       temp = nums[current];
       nums[current] = nums[nonZeroIndex];
       nums[nonZeroIndex++] = temp;
-      console.log({ current, nonZeroIndex, nums });
     }
   }
 };
