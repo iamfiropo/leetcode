@@ -1,6 +1,9 @@
 /**
  * @param {number[]} nums
  * @return {number}
+ * Approach: One Pass
+ * Time complexity: O(n)
+ * Space complexity: O(1)
  */
 var findNumbers = function (nums) {
   let count = 0;
