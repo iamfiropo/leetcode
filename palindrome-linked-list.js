@@ -73,3 +73,65 @@ var isPalindrome = function (head) {
 
   return recursiveCheck();
 };
+
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {boolean}
+ 
+ Approach: Reverse Second Half In-Place
+ Time Complexity: O(n)
+ Space Complexity: O(1)
+ */
+var isPalindrome = function(head) {
+  if (!head || !head.next) return true;
+  
+  let firstHalfEnd = endOfFirstHalf(head);
+  let secondHalfStart = reverseList(firstHalfEnd.next)
+  
+  let result = true;
+  let firstPosition = head;
+  let secondPosition = secondHalfStart;
+  
+  while (result && secondPosition !== null) {
+      if (firstPosition.val !== secondPosition.val) result = false;
+      
+      firstPosition = firstPosition.next;
+      secondPosition = secondPosition.next;
+  }
+  
+  firstHalfEnd.next = reverseList(secondHalfStart);
+  
+  return result;
+};
+
+function endOfFirstHalf(head) {
+  let slowPointer = head;
+  let fastPointer = head;
+  
+  while (fastPointer.next !== null && fastPointer.next.next !== null) {
+      fastPointer = fastPointer.next.next;
+      slowPointer = slowPointer.next;
+  }
+  
+  return slowPointer
+}
+
+function reverseList(head) {
+  let previous = null;
+  
+  while(head) {
+      temp = head.next;
+      head.next = previous;
+      previous = head;
+      head = temp;
+  }
+  
+  return previous;
+}
