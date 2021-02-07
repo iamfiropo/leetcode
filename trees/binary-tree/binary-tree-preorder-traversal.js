@@ -11,7 +11,7 @@
  * @return {number[]}
  
  Question: https://leetcode.com/problems/binary-tree-preorder-traversal
- 
+ Note to self: DFS (Preorder Traversal) - NLR 
  Approach: Recursion
  Time Complexity: O(n)
  Space Complexity: O(n)
@@ -103,4 +103,45 @@ var preorderTraversal = function (root) {
   }
 
   return output;
+};
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number[]}
+ 
+ Approach:  Iteration using stack
+ Time Complexity: O(n)
+ Space Complexity: O(n)
+ */
+
+var preorderTraversal = function (root) {
+  const result = [];
+
+  const stack = [];
+  let node = root;
+
+  while (node !== null || stack.length !== 0) {
+    /* 
+      Corner case for when the current node reaches it's depth
+      Then, the node variable receives the last added right node for the next traversal
+      Hence, the reason stack was implemented
+    */
+    if (node === null) node = stack.pop();
+
+    result.push(node.val);
+
+    if (node.right) stack.push(node.right);
+
+    node = node.left;
+  }
+
+  return result;
 };
