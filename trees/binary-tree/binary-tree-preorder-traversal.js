@@ -116,6 +116,8 @@ var preorderTraversal = function (root) {
 /**
  * @param {TreeNode} root
  * @return {number[]}
+ * 
+ * NLR - Node - Left - Right
  
  Approach:  Iteration using stack
  Time Complexity: O(n)
@@ -141,6 +143,51 @@ var preorderTraversal = function (root) {
     if (node.right) stack.push(node.right);
 
     node = node.left;
+  }
+
+  return result;
+};
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number[]}
+ 
+  LRN
+ 
+ Approach: Iterative PostOrder Traversal
+ Time Complexity: O(n)
+ Space Complexity: O(n)
+ */
+var postorderTraversal = function (root) {
+  const result = [];
+  let stack = [];
+
+  while (root || stack.length) {
+    while (root) {
+      if (root.right) stack.push(root.right);
+
+      stack.push(root);
+      root = root.left;
+    }
+
+    root = stack.pop();
+
+    if (stack.length && root.right === stack[stack.length - 1]) {
+      stack.pop();
+      stack.push(root);
+      root = root.right;
+    } else {
+      result.push(root.val);
+      root = null;
+    }
   }
 
   return result;
