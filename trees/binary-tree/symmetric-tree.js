@@ -44,6 +44,8 @@ var isSymmetric = function (root) {
  * @param {TreeNode} root
  * @return {boolean}
  
+ Question: https://leetcode.com/problems/symmetric-tree
+ 
  Approach: Iterative
  Time complexity: O(n)
  Space complexity: O(n)
@@ -59,10 +61,7 @@ var isSymmetric = function (root) {
     if (t1 === null || t2 === null) return false;
     if (t1.val !== t2.val) return false;
 
-    queue.push(t1.left);
-    queue.push(t2.right);
-    queue.push(t1.right);
-    queue.push(t2.left);
+    queue.push(t1.left, t2.right, t1.right, t2.left);
   }
 
   return true;
