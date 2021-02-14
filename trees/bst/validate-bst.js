@@ -12,7 +12,7 @@
  
  QUESTION: https://leetcode.com/problems/validate-binary-search-tree
  
- Approach: DFS - Inorder strategy, as this sort binary search tree (bst)
+ Approach: DFS - Inorder strategy, as this traversal automatically returns a sorted tree
  Time complexity: O(n)
  Space complexity: O(n)
  
