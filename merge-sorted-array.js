@@ -35,6 +35,36 @@ var merge = function (nums1, m, nums2, n) {
  * @param {number[]} nums2
  * @param {number} n
  * @return {void} Do not return anything, modify nums1 in-place instead.
+ 
+ Approach: Two Pointers
+ 
+ Time Complexity: O(n)
+ Space Complexity: O(1)
+ */
+var merge = function (nums1, m, nums2, n) {
+  if (n === 0) return nums1;
+
+  let size = m + n;
+  while (size--) {
+    // Edge Case
+    if (n === 0) return nums1;
+
+    if (nums1[m - 1] >= nums2[n - 1]) {
+      nums1[size] = nums1[m - 1];
+      --m;
+    } else {
+      nums1[size] = nums2[n - 1];
+      --n;
+    }
+  }
+};
+
+/**
+ * @param {number[]} nums1
+ * @param {number} m
+ * @param {number[]} nums2
+ * @param {number} n
+ * @return {void} Do not return anything, modify nums1 in-place instead.
  *
  * Question: https://leetcode.com/problems/merge-sorted-array/
  *
