@@ -4,11 +4,70 @@
  * @param {number[]} nums2
  * @param {number} n
  * @return {void} Do not return anything, modify nums1 in-place instead.
+ 
+ Question: https://leetcode.com/problems/merge-sorted-array
+ 
+ Approach: Sorting
+ 
+ Time Complexity: O((n + m)log(n + m))
+ Space Complexity: O(n)
+ */
+var merge = function (nums1, m, nums2, n) {
+  if (n === 0) return nums1;
+
+  for (let i = 0; i < n; i++) {
+    nums1[m + i] = nums2[i];
+  }
+
+  nums1.sort((a, b) => a - b);
+};
+
+/**
+ * @param {number[]} nums1
+ * @param {number} m
+ * @param {number[]} nums2
+ * @param {number} n
+ * @return {void} Do not return anything, modify nums1 in-place instead.
+ 
+ Approach: Three Pointers (Start From the Beginning)
+ 
+ Time Complexity: O(n + m)
+ Space Complexity: O(m)
+ */
+var merge = function (nums1, m, nums2, n) {
+  if (n === 0) return nums1;
+
+  // make a copy of the first m elements of nums1
+  let nums1Copy = [];
+
+  for (let i = 0; i < m; i++) {
+    nums1Copy.push(nums1[i]);
+  }
+
+  // Read pointers for nums1Copy and nums2 respectively
+  let p1 = 0;
+  let p2 = 0;
+
+  // Compare elements from nums1Copy and nums2 and write the smallest to nums1
+  for (let i = 0; i < m + n; i++) {
+    // Check that p1 and p2 are not over the boundaries of there respective arrays
+    if (p2 >= n || (p1 < m && nums1Copy[p1] < nums2[p2])) {
+      nums1[i] = nums1Copy[p1++];
+    } else {
+      nums1[i] = nums2[p2++];
+    }
+  }
+};
+
+/**
+ * @param {number[]} nums1
+ * @param {number} m
+ * @param {number[]} nums2
+ * @param {number} n
+ * @return {void} Do not return anything, modify nums1 in-place instead.
  *
- * Question: https://leetcode.com/problems/merge-sorted-array/
- *
- * Approach: Two Pointers
- * Time complexity: O(n)
+ * Approach: Three Pointers (Start from the end)
+ * Time complexity: O(n + m)
  * Space complexity: O(1)
  */
 var merge = function (nums1, m, nums2, n) {
@@ -36,9 +95,9 @@ var merge = function (nums1, m, nums2, n) {
  * @param {number} n
  * @return {void} Do not return anything, modify nums1 in-place instead.
  
- Approach: Two Pointers
+ Approach: Three Pointers (Start from the end)
  
- Time Complexity: O(n)
+ Time Complexity: O(n + m)
  Space Complexity: O(1)
  */
 var merge = function (nums1, m, nums2, n) {
@@ -68,8 +127,8 @@ var merge = function (nums1, m, nums2, n) {
  *
  * Question: https://leetcode.com/problems/merge-sorted-array/
  *
- * Approach: Two Pointers
- * Time complexity: O(n)
+ * Approach: Three Pointers (Start from the end)
+ * Time complexity: O(n + m)
  * Space complexity: O(1)
  * 
  *   declare a variable to sum the total length of the two array
