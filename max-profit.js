@@ -1,20 +1,21 @@
 /**
  * @param {number[]} prices
  * @return {number}
- * 
- * Question: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/solution/
- * 
-  Approach: Simple One Pass
-  Time Complexity: O(n)
-  Space Complexity: O(1)
+ 
+ Question: https://leetcode.com/problems/best-time-to-buy-and-sell-stock
+ 
+ Approach: One Pass
+ 
+ Time Complexity: O(n)
+ Space Complexity: O(1)
  */
-const maxProfit = function (prices) {
+var maxProfit = function (prices) {
+  let minPrice = Number.MAX_VALUE;
   let maxProfit = 0;
 
-  for (let i = 1; i < prices.length; i++) {
-    if (prices[i] > prices[i - 1]) {
-      maxProfit += prices[i] - prices[i - 1];
-    }
+  for (let i = 0; i < prices.length; i++) {
+    if (prices[i] < minPrice) minPrice = prices[i];
+    else if (prices[i] - minPrice > maxProfit) maxProfit = prices[i] - minPrice;
   }
 
   return maxProfit;
