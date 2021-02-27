@@ -13,14 +13,14 @@ var rob = function (nums) {
   if (nums.length === 0) return 0;
   if (nums.length === 1) return nums[0];
 
+  return swap(nums);
+};
+
+var swap = function (nums) {
   let previousMax = 0,
     currentMax = 0;
 
-  return swap(nums, previousMax, currentMax);
-};
-
-var swap = function (nums, previousMax, currentMax) {
-  for (let num of nums) {
+  for (num of nums) {
     temp = currentMax;
     summedMax = previousMax + num;
     currentMax = Math.max(summedMax, currentMax);
