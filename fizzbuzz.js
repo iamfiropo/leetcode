@@ -52,3 +52,28 @@ var fizzBuzz = function (n) {
 
   return result;
 };
+
+/**
+ * @param {number} n
+ * @return {string[]}
+ 
+ Approach: HashTable
+ Time Complexity: O(n)
+ Space Complexity: O(n)
+ */
+var fizzBuzz = function (n) {
+  let result = [];
+
+  let map = { 3: "Fizz", 5: "Buzz" };
+
+  for (i = 1; i <= n; i++) {
+    str = "";
+
+    for (prop in map) if (i % Number(prop) === 0) str += map[prop];
+    if (str === "") str += i;
+
+    result.push(str);
+  }
+
+  return result;
+};
