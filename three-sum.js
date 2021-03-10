@@ -15,9 +15,6 @@ function threeSum(nums) {
    * check if the summation is lesser than target, then increment start pointer and also...
    * check for the inner duplicate item by comparing the current item with the next pointing item and increment/decrement as the case may be
    
-   
-   Runtime: 148 ms, faster than 78.34% of JavaScript online submissions for 3Sum.
-Memory Usage: 46.7 MB, less than 92.56% of JavaScript online submissions for 3Sum.
    * 
    */
 
