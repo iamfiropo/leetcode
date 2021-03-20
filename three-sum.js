@@ -14,8 +14,7 @@ function threeSum(nums) {
    * check if the summation of the array item is equal to 0, push to result array
    * check if the summation is lesser than target, then increment start pointer and also...
    * check for the inner duplicate item by comparing the current item with the next pointing item and increment/decrement as the case may be
-   
-   * 
+   *
    */
 
   const result = [];
@@ -28,12 +27,14 @@ function threeSum(nums) {
       let endPointer = nums.length - 1;
 
       while (startPointer < endPointer) {
-        if (nums[i] + nums[startPointer] + nums[endPointer] === 0) {
+        let sum = nums[i] + nums[startPointer] + nums[endPointer];
+
+        if (sum === 0) {
           result.push([nums[i], nums[startPointer], nums[endPointer]]);
         }
 
         // driving both pointers inward
-        if (nums[i] + nums[startPointer] + nums[endPointer] < 0) {
+        if (sum < 0) {
           const currentStartPointer = startPointer;
 
           while (
