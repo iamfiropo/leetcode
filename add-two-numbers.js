@@ -1,23 +1,49 @@
-// https://leetcode.com/problems/add-two-numbers
-
 /**
- * instantiate ListNode class and assign it to head
- * assign head to node
- * initialize carry with 0;
- * Traverse l1 and l2 nodes, conditionally picking the value of each node that is not undefined, else pick 0
- * add the two values and carry on each traversal
- * Reset carry to 0;
- * assign sum to newValue variable
- * check if sum is greater than 9
- * remove 10 from sum, update the newValue with the
- *  remainder and update carry
- * instantiate ListNode with the newValue update
- * assing node.next to node
- * Check if each linkedlist node input have next node
- * Outside the traversal, check if there is carry and
- * instantiate ListNode with carry and assign it to node.next
- * return head.next
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
  */
+/**
+ * @param {ListNode} l1
+ * @param {ListNode} l2
+ * @return {ListNode}
+ 
+ Question: https://leetcode.com/problems/add-two-numbers
+ 
+ Approach: Elementary Math
+ 
+ Time Complexity: O(max(m,n))
+ Space Complexity: O(max(m,n))
+ */
+
+var addTwoNumbers = function (l1, l2) {
+  let head = new ListNode(0);
+  let current = head;
+  let carry = 0;
+  let p = l1;
+  let q = l2;
+
+  while (p || q) {
+    // check if node value is true
+    let l1Value = p ? p.val : 0;
+    let l2Value = q ? q.val : 0;
+
+    let sum = l1Value + l2Value + carry;
+    carry = Math.floor(sum / 10);
+    current.next = new ListNode(sum % 10);
+    current = current.next;
+    if (p) p = p.next;
+    if (q) q = q.next;
+  }
+
+  if (carry) {
+    current.next = new ListNode(carry);
+  }
+
+  return head.next;
+};
 
 var addTwoNumbers = function (l1, l2) {
   let head = new ListNode(0);
