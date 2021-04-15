@@ -15,10 +15,10 @@ var longestPalindrome = function (s) {
   let max = "";
 
   for (let i = 0; i < s.length; i++) {
-    let left = expandAroundCenter(s, i, i);
-    let right = expandAroundCenter(s, i, i + 1);
+    let odd = expandAroundCenter(s, i, i);
+    let even = expandAroundCenter(s, i, i + 1);
 
-    let currMax = left.length >= right.length ? left : right;
+    let currMax = odd.length >= even.length ? odd : even;
     max = currMax.length > max.length ? currMax : max;
   }
 
