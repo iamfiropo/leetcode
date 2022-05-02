@@ -4,7 +4,7 @@
  * 
  *  Question: https://leetcode.com/problems/sort-array-by-parity
 
- Approach: In-place
+ Approach: In-place <Two pointers>
  Time complexity: O(n)
  Space complexity: O(1)
  */
