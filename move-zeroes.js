@@ -2,7 +2,7 @@
  * @param {number[]} nums
  * @return {void} Do not return anything, modify nums in-place instead.
  
- Question: https://leetcode.com/problems/move-zeroes/solution/
+ Question: https://leetcode.com/problems/move-zeroes
 
  Approach: Space Sub-Optimal
  Time complexity: O(n)
