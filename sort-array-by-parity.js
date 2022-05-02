@@ -15,13 +15,21 @@
   
   while (length--) {
     if (nums[fastPointer] % 2 === 0) {
-      temp = nums[fastPointer];
-      nums[fastPointer] = nums[slowPointer];
-      nums[slowPointer++] = temp;
+      swap(nums, slowPointer, fastPointer)
+        
+      ++slowPointer
     }
       
-     ++fastPointer;
+     ++fastPointer
   }
   
   return nums
 };
+
+var swap = function(nums, slowPointer, fastPointer) {
+  const temp = nums[fastPointer];
+  nums[fastPointer] = nums[slowPointer];
+  nums[slowPointer] = temp;
+  
+  return nums;
+}
