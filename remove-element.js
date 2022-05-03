@@ -5,7 +5,7 @@
  * 
  * Question: https://leetcode.com/problems/remove-element
  * 
- The solution is the most efficient among other ones in this file because it's less expensive
+ This solution is the most efficient among other ones in this file because it has a less expensive copying operation
 
  Approach: In-place <Two Pointers>
  Time Complexity: O(n)
