@@ -2,7 +2,7 @@
  * @param {number[]} heights
  * @return {number}
  * 
- *  * Question: https://leetcode.com/problems/height-checker
+ * Question: https://leetcode.com/problems/height-checker
 
  Approach: One pass
  Time Complexity: O(n)
