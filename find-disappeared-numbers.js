@@ -16,7 +16,7 @@
   for (let num of nums) set.add(num);
   
   for (let i = 1; i <= n; i++) {
-      if (!set.has(i)) res.push(i)
+    if (!set.has(i)) res.push(i)
   }
   
   return res;
