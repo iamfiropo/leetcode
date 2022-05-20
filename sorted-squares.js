@@ -21,7 +21,8 @@ var sortedSquares = function (nums) {
  * @return {number[]}
  * 
 
- Approach: Two Pointers
+ Approach: Two Pointer
+ 
  Time Complexity: O(n)
  Space Complexity: O(n)
  */
